@@ -1,0 +1,114 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table thead {
+    background: linear-gradient(to right, #FF6F61, #9B51E0);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .table th, .table td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+  
+  .table th {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  .table tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+  }
+  
+  .table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .table td {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .table img {
+    width: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .table img:hover {
+    transform: scale(1.1);
+  }
+  
+  .table td button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .table td .img-fluid {
+    max-width: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .ps-2 {
+    padding-left: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .table thead {
+      display: none;
+    }
+  
+    .table, .table tbody, .table tr, .table td {
+      display: block;
+      width: 100%;
+    }
+  
+    .table td {
+      text-align: right;
+      padding-left: 50%;
+      position: relative;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  
+    .table td::before {
+      content: attr(data-label); /* Add label to each cell */
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #999;
+    }
+  
+    .table td:last-child {
+      border-bottom: none;
+    }
+  
+    .table td img {
+      display: inline-block;
+      margin-left: 5px; /* Spacing between icons in responsive */
+    }
+  
+    .table td {
+      padding-left: 50%;
+      text-align: left;
+      padding-bottom: 15px;
+      position: relative;
+    }
+  }
+  
