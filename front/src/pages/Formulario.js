@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import "./css/form.css"
 
 export default function Inserir() {
     const [nome, setNome] = useState('');
@@ -66,75 +67,44 @@ export default function Inserir() {
 
     return (
         <div className="container">
-            <form onSubmit={handleSubmit}>
-                <div className="row">
-                    <div className="col-4"></div>
-                    <div className="col-4">Nome do Produto</div>
-                    <div className="col-4"></div>
+            <form onSubmit={handleSubmit} className="form">
+                <div className="form-group">
+                    <label htmlFor="nome">Nome do Produto</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        className="form-control"
+                        value={nome}
+                        onChange={(e) => setNome(e.target.value)}
+                        required
+                    />
                 </div>
-
-                <div className="row">
-                    <div className="col-4"></div>
-                    <div className="col-4">
-                        <input
-                            type="text"
-                            className="form-control"
-                            value={nome}
-                            onChange={(e) => setNome(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="col-4"></div>
+                <div className="form-group">
+                    <label htmlFor="preco">Preço do Produto</label>
+                    <input
+                        type="number"
+                        id="preco"
+                        className="form-control"
+                        value={preco}
+                        onChange={(e) => setPreco(e.target.value)}
+                        required
+                    />
                 </div>
-
-                <div className="row">
-                    <div className="col-4"></div>
-                    <div className="col-4">Preco do Produto</div>
-                    <div className="col-4"></div>
+                <div className="form-group">
+                    <label htmlFor="quantidade">Quantidade</label>
+                    <input
+                        type="number"
+                        id="quantidade"
+                        className="form-control"
+                        value={quantidade}
+                        onChange={(e) => setQuantidade(e.target.value)}
+                    />
                 </div>
-
-                <div className="row">
-                    <div className="col-4"></div>
-                    <div className="col-4">
-                        <input
-                            type="Number"
-                            className="form-control"
-                            value={preco}
-                            onChange={(e) => setPreco(e.target.value)}
-                            required
-                        />
-                    </div>
-                    <div className="col-4"></div>
-                </div>
-
-                <div className="row">
-                    <div className="col-4"></div>
-                    <div className="col-4">Quantidade</div>
-                    <div className="col-4"></div>
-                </div>
-
-                <div className="row">
-                    <div className="col-4"></div>
-                    <div className="col-4">
-                        <input
-                            type="Number"
-                            className="form-control"
-                            value={quantidade}
-                            onChange={(e) => setQuantidade(e.target.value)}
-                        />
-                    </div>
-                    <div className="col-4"></div>
-                </div>
-
-                <div className="row mt-4">
-                    <div className="col-4"></div>
-                    <div className="col-2 d-grid">
-                        <button type="submit" className=" btn btn-success">{id ? 'Atualizar' : 'Cadastrar'}</button>
-                    </div>
-                    <div className="col-2 d-grid">
-                            <Link to="/" className='btn btn-secondary'>Voltar</Link>
-                    </div>
-                    <div className="col-4"></div>
+                <div className="form-actions">
+                    <button type="submit" className="btn btn-success">
+                        {id ? 'Atualizar' : 'Cadastrar'}
+                    </button>
+                    <Link to="/" className="btn btn-secondary">Voltar</Link>
                 </div>
             </form>
         </div>

@@ -1,0 +1,101 @@
+.container {
+    max-width: 1200px; /* Define uma largura máxima para a tela maior */
+    margin: 0 auto; /* Centraliza o container */
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os grupos do formulário */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: left;
+    font-size: 1rem; /* Ajusta o tamanho da fonte */
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem; /* Ajusta o tamanho da fonte */
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+button, .btn {
+    padding: 10px 20px; /* Aumenta o padding para melhor visualização */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 15px; /* Ajusta o padding para telas menores */
+    }
+}
+
+@media (max-width: 768px) {
+    .form-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-group {
+        flex-direction: column;
+    }
+
+    .form-control {
+        padding: 10px;
+        font-size: 0.875rem; /* Ajusta o tamanho da fonte */
+    }
+
+    button, .btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}

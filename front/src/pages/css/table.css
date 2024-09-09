@@ -1,0 +1,29 @@
+/* Gradiente de fundo para o cabeçalho da tabela */
+.bg-gradient {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+
+/* Sombras e bordas personalizadas */
+.table {
+  border: 1px solid #e3e6f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table thead th {
+  background: #6a11cb;
+  color: white;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.table tbody tr:hover {
+  background-color: #f0f2f5;
+}
+
+/* Ícones de ação: ajusta o espaçamento e o tamanho */
+.table td img {
+  width: 20px;
+  height: 20px;
+}
+

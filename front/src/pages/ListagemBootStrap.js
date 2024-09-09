@@ -3,9 +3,9 @@ import React, { useState, useEffect }  from 'react';
 
 import EditImg from "../img/icons8-lápis-32.png"
 import DeleteImg from "../img/icons8-resíduos-32.png"
-import "../table.css"
+import "./css/table.css"
 
-export default function Listagem()
+export default function ListagemBootStrap()
 {
 
     const [posts, setPosts] = useState([]);
@@ -43,8 +43,8 @@ export default function Listagem()
    return (
     <div class='container'>
         
-        <table className="table">
-            <thead>
+        <table className="table table-hover table-responsive-md shadow-sm border rounded">
+            <thead className="bg-gradient text-white">
                 <tr>
                 <th className="text-center">Nome</th>
                 <th className="text-center">Preço</th>
@@ -53,26 +53,36 @@ export default function Listagem()
                 </tr>
             </thead>
 
-            {posts.map((post) => {
-                return (
-                <tbody key={post._id}>
-                    <tr>
+            <tbody>
+                {posts.map((post) => (
+                <tr key={post._id} className="align-middle">
                     <td className="text-center">{post.nome}</td>
-                    <td className="text-center">{post.preco}</td>
+                    <td className="text-center">R$ {post.preco}</td>
                     <td className="text-center">{post.quantidade}</td>
                     <td className="text-center">
-                        <Link to="/Formulario" state={{ id: post._id }}>
-                            <img src={EditImg} alt="Editar" className="img-fluid" />
-                        </Link>
-                        <button onClick={() => handleDelete(post._id)} className="ms-2">
-                            <img src={DeleteImg} alt="Excluir" className="img-fluid" />
-                        </button>
+                    <Link to="/Formulario" state={{ id: post._id }}>
+                        <img
+                        src={EditImg}
+                        alt="Editar"
+                        className="img-fluid me-2"
+                        style={{ maxWidth: '20px' }}
+                        />
+                    </Link>
+                    <button onClick={() => handleDelete(post._id)} className="btn p-0">
+                        <img
+                        src={DeleteImg}
+                        alt="Excluir"
+                        className="img-fluid"
+                        style={{ maxWidth: '20px' }}
+                        />
+                    </button>
                     </td>
-                    </tr>
-                </tbody>
-                );
-            })}
-            </table>
+                </tr>
+                ))}
+            </tbody>
+        </table>
+
+
 
 
         <div className="row">
