@@ -67,6 +67,15 @@ export default function Inserir() {
 
     return (
         <div className="container">
+
+        <div className="row mb-4">
+                <div className="col-sm-4"></div>
+                <div className="col-sm-4">
+                    <h2 className="text-center">Cadastro de produtos</h2>
+                </div>
+            <div className="col-sm-4"></div>
+        </div>                
+
             <form onSubmit={handleSubmit} className="form">
                 <div className="form-group">
                     <label htmlFor="nome">Nome do Produto</label>

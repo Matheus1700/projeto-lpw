@@ -42,7 +42,13 @@ export default function ListagemBootStrap()
 
    return (
     <div class='container'>
-        
+        <div className="row mb-4">
+            <div className="col-sm-4"></div>
+            <div className="col-sm-4">
+                <h2 className="text-center">Cadastro de produtos</h2>
+            </div>
+            <div className="col-sm-4"></div>
+        </div>
         <table className="table table-hover table-responsive-md shadow-sm border rounded">
             <thead className="bg-gradient text-white">
                 <tr>
@@ -85,7 +91,7 @@ export default function ListagemBootStrap()
 
 
 
-        <div className="row">
+        <div className="row mt-4">
             <div class="col-sm-4"></div>
             <div class="col-sm-4 d-grid">
                 <Link to="/Formulario" className ='btn btn-success' state={{id: null}}  >Cadastrar</Link>
