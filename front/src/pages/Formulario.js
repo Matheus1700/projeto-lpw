@@ -97,6 +97,7 @@ export default function Inserir() {
                         value={preco}
                         onChange={(e) => setPreco(e.target.value)}
                         required
+                        min="0"
                     />
                 </div>
                 <div className="form-group">
@@ -107,6 +108,7 @@ export default function Inserir() {
                         className="form-control"
                         value={quantidade}
                         onChange={(e) => setQuantidade(e.target.value)}
+                        min="0"
                     />
                 </div>
                 <div className="form-actions">
