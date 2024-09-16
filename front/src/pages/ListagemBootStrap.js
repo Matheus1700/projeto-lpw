@@ -10,7 +10,7 @@ export default function ListagemBootStrap()
 
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        fetch('http://127.0.0.1:3000/api/produtos/all')
+        fetch('http://127.0.0.1:3000/api/livros/all')
          .then((response) => response.json())
          .then((data) => {
             setPosts(data);
@@ -20,15 +20,13 @@ export default function ListagemBootStrap()
          });
     }, []);
 
-    //Recebe o evento do formulário
     const handleDelete = (e) => {
-        
         Delete(e);
         window.location.reload();
     };
 
     async function Delete(e){
-        await fetch(`http://127.0.0.1:3000/api/produtos/delete/${e}`, {
+        await fetch(`http://127.0.0.1:3000/api/livros/delete/${e}`, {
             method: 'POST',
             headers: {
                'Content-type': 'application/json; charset=UTF-8',
@@ -45,7 +43,7 @@ export default function ListagemBootStrap()
         <div className="row mb-4">
             <div className="col-sm-4"></div>
             <div className="col-sm-4">
-                <h2 className="text-center">Cadastro de produtos</h2>
+                <h2 className="text-center">Cadastro de Livros</h2>
             </div>
             <div className="col-sm-4"></div>
         </div>
@@ -89,12 +87,10 @@ export default function ListagemBootStrap()
         </table>
 
 
-
-
         <div className="row mt-4">
             <div class="col-sm-4"></div>
             <div class="col-sm-4 d-grid">
-                <Link to="/Formulario" className ='btn btn-success' state={{id: null}}  >Cadastrar</Link>
+                <Link to="/Formulario" className ='btn btn-success' state={{id: null}}>Cadastrar</Link>
             </div>
             <div class="col-sm-4"></div>
         </div>

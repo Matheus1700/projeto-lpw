@@ -39,33 +39,25 @@
 }
 
 button, .btn {
-    padding: 10px 20px; /* Aumenta o padding para melhor visualização */
-    font-size: 16px; /* Ajusta o tamanho da fonte */
-    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
     border-radius: 4px;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s;
+    color: white; 
+    transition: background-color 0.3s ease; 
 }
 
 .btn-success {
-    background-color: #28a745;
-    color: white;
+    background-color: #5bc0de; 
 }
 
 .btn-success:hover {
-    background-color: #218838;
+    background-color: #31b0d5; 
 }
 
-.btn-secondary {
-    background-color: #6c757d;
-    color: white;
-}
 
-.btn-secondary:hover {
-    background-color: #5a6268;
-}
-
-/* Responsive Design */
 @media (max-width: 1024px) {
     .container {
         padding: 15px; /* Ajusta o padding para telas menores */

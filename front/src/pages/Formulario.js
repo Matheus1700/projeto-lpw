@@ -14,7 +14,7 @@ export default function Inserir() {
     async function handleSubmit(e) {
         e.preventDefault(); // Previne o comportamento padrão do formulário
 
-        const url = id ? `http://127.0.0.1:3000/api/produtos/edit/${id}` : 'http://127.0.0.1:3000/api/produtos';
+        const url = id ? `http://127.0.0.1:3000/api/livros/edit/${id}` : 'http://127.0.0.1:3000/api/livros';
         const method = id ? 'PUT' : 'POST';
         const body = JSON.stringify({ nome, preco, quantidade });
 
@@ -47,7 +47,7 @@ export default function Inserir() {
             if (userId) {
                 setId(userId);
                 try {
-                    const response = await fetch(`http://127.0.0.1:3000/api/produtos/${userId}`);
+                    const response = await fetch(`http://127.0.0.1:3000/api/livros/${userId}`);
                     const data = await response.json();
                     if (response.ok) {
                         setNome(data.nome);
@@ -71,14 +71,14 @@ export default function Inserir() {
         <div className="row mb-4">
                 <div className="col-sm-4"></div>
                 <div className="col-sm-4">
-                    <h2 className="text-center">Cadastro de produtos</h2>
+                    <h2 className="text-center">Cadastro de livros</h2>
                 </div>
             <div className="col-sm-4"></div>
         </div>                
 
             <form onSubmit={handleSubmit} className="form">
                 <div className="form-group">
-                    <label htmlFor="nome">Nome do Produto</label>
+                    <label htmlFor="nome">Nome do Livro</label>
                     <input
                         type="text"
                         id="nome"
@@ -89,7 +89,7 @@ export default function Inserir() {
                     />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="preco">Preço do Produto</label>
+                    <label htmlFor="preco">Preço do Livro</label>
                     <input
                         type="number"
                         id="preco"
@@ -115,7 +115,7 @@ export default function Inserir() {
                     <button type="submit" className="btn btn-success">
                         {id ? 'Atualizar' : 'Cadastrar'}
                     </button>
-                    <Link to="/" className="btn btn-secondary">Voltar</Link>
+                    <Link to="/" className="btn btn-success">Voltar</Link>
                 </div>
             </form>
         </div>
